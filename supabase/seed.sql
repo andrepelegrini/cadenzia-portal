@@ -1,0 +1,11 @@
+-- Cadenzia seed data (development only)
+-- Run after applying migrations.
+-- TODO: populate once schema is finalised.
+
+-- Example: insert a test client and two partners
+-- INSERT INTO public.clients (id, name, slug) VALUES
+--   ('00000000-0000-0000-0000-000000000001', 'Clínica DermaSul', 'dermasul');
+--
+-- INSERT INTO public.partners (id, client_id, name, email) VALUES
+--   ('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000001', 'Dr. Silva', 'silva@dermasul.com.br'),
+--   ('00000000-0000-0000-0000-000000000011', '00000000-0000-0000-0000-000000000001', 'Dra. Costa', 'costa@dermasul.com.br');

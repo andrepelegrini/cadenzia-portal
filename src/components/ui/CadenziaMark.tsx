@@ -1,0 +1,79 @@
+/**
+ * Cadenzia mark (symbol only) as an inline SVG React component.
+ *
+ * Using inline SVG rather than <img> means:
+ * - stroke color inherits from CSS `color` property (no CSS filter hacks needed)
+ * - Scales perfectly at any size
+ * - No network request
+ *
+ * Usage:
+ *   <CadenziaMark size={28} className="text-[#DDFF55]" />   ← isotonic on dark bg
+ *   <CadenziaMark size={28} className="text-midnight" />      ← dark on light bg
+ */
+
+interface Props {
+  size?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export default function CadenziaMark({ size = 32, className = "", style }: Props) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={style}
+      aria-label="Cadenzia"
+    >
+      {/* ── Ruled surface mesh (18 lines per family) ── */}
+      {/* Family 1: upper arm → right arc */}
+      <line x1="20.00" y1="52.00" x2="80.00" y2="17.00" strokeWidth="0.77"/>
+      <line x1="23.86" y1="50.35" x2="77.98" y2="20.01" strokeWidth="0.77"/>
+      <line x1="27.68" y1="48.59" x2="76.15" y2="23.06" strokeWidth="0.77"/>
+      <line x1="31.46" y1="46.73" x2="74.52" y2="26.17" strokeWidth="0.77"/>
+      <line x1="35.20" y1="44.78" x2="73.10" y2="29.35" strokeWidth="0.77"/>
+      <line x1="38.89" y1="42.76" x2="71.90" y2="32.62" strokeWidth="0.77"/>
+      <line x1="42.55" y1="40.67" x2="70.92" y2="35.99" strokeWidth="0.77"/>
+      <line x1="46.16" y1="38.53" x2="70.17" y2="39.49" strokeWidth="0.77"/>
+      <line x1="49.73" y1="36.35" x2="69.66" y2="43.12" strokeWidth="0.77"/>
+      <line x1="53.26" y1="34.14" x2="69.40" y2="46.92" strokeWidth="0.77"/>
+      <line x1="56.75" y1="31.92" x2="69.39" y2="50.89" strokeWidth="0.77"/>
+      <line x1="60.19" y1="29.70" x2="69.64" y2="55.05" strokeWidth="0.77"/>
+      <line x1="63.60" y1="27.49" x2="70.15" y2="59.42" strokeWidth="0.77"/>
+      <line x1="66.96" y1="25.30" x2="70.94" y2="64.01" strokeWidth="0.77"/>
+      <line x1="70.28" y1="23.14" x2="72.02" y2="68.85" strokeWidth="0.77"/>
+      <line x1="73.56" y1="21.03" x2="73.38" y2="73.95" strokeWidth="0.77"/>
+      <line x1="76.80" y1="18.98" x2="75.04" y2="79.33" strokeWidth="0.77"/>
+      <line x1="80.00" y1="17.00" x2="77.00" y2="85.00" strokeWidth="0.77"/>
+      {/* Family 2: lower arm → right arc (reversed) */}
+      <line x1="20.00" y1="52.00" x2="77.00" y2="85.00" strokeWidth="0.77"/>
+      <line x1="23.84" y1="53.63" x2="75.04" y2="79.33" strokeWidth="0.77"/>
+      <line x1="27.60" y1="55.33" x2="73.38" y2="73.95" strokeWidth="0.77"/>
+      <line x1="31.29" y1="57.11" x2="72.02" y2="68.85" strokeWidth="0.77"/>
+      <line x1="34.90" y1="58.94" x2="70.94" y2="64.01" strokeWidth="0.77"/>
+      <line x1="38.45" y1="60.83" x2="70.15" y2="59.42" strokeWidth="0.77"/>
+      <line x1="41.93" y1="62.76" x2="69.64" y2="55.05" strokeWidth="0.77"/>
+      <line x1="45.35" y1="64.73" x2="69.39" y2="50.89" strokeWidth="0.77"/>
+      <line x1="48.71" y1="66.74" x2="69.40" y2="46.92" strokeWidth="0.77"/>
+      <line x1="52.02" y1="68.77" x2="69.66" y2="43.12" strokeWidth="0.77"/>
+      <line x1="55.28" y1="70.81" x2="70.17" y2="39.49" strokeWidth="0.77"/>
+      <line x1="58.49" y1="72.87" x2="70.92" y2="35.99" strokeWidth="0.77"/>
+      <line x1="61.66" y1="74.93" x2="71.90" y2="32.62" strokeWidth="0.77"/>
+      <line x1="64.79" y1="76.98" x2="73.10" y2="29.35" strokeWidth="0.77"/>
+      <line x1="67.89" y1="79.02" x2="74.52" y2="26.17" strokeWidth="0.77"/>
+      <line x1="70.95" y1="81.04" x2="76.15" y2="23.06" strokeWidth="0.77"/>
+      <line x1="73.99" y1="83.04" x2="77.98" y2="20.01" strokeWidth="0.77"/>
+      <line x1="77.00" y1="85.00" x2="80.00" y2="17.00" strokeWidth="0.77"/>
+      {/* ── Outer silhouette (arms + concave arc) ── */}
+      <path d="M20,52 C42,43 62,28 80,17" strokeWidth="1.4"/>
+      <path d="M20,52 C42,61 60,74 77,85" strokeWidth="1.4"/>
+      <path d="M80,17 C68,34 65,52 77,85" strokeWidth="1.4"/>
+    </svg>
+  );
+}

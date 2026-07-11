@@ -1,0 +1,34 @@
+/**
+ * Cadenzia brand tokens — single source of truth.
+ * Import this in globals.css. Never hard-code these values elsewhere.
+ *
+ * Brand values: precisão · clareza · proximidade
+ */
+
+:root {
+  /* ── Core palette ────────────────────────────────────────────── */
+  --midnight:  #002233;   /* primary dark navy  — structural chrome, headers     */
+  --neptune:   #11425D;   /* secondary blue     — accents, badges                */
+  --pacific:   #C0D6EA;   /* light blue         — tints, secondary badges        */
+  --grape:     #C5C0C9;   /* muted mauve        — secondary badges               */
+  --cheviot:   #F6F2E8;   /* warm cream         — main working/content bg        */
+  --isotonic:  #DDFF55;   /* electric yellow-green — THE one accent.
+                              Use ONLY on: primary CTAs, live/highlighted numbers.
+                              One use per screen. Never decorative.              */
+
+  /* ── Text ────────────────────────────────────────────────────── */
+  --text:      #1a2e38;
+  --text-soft: #5a6b74;
+
+  /* ── Borders / dividers ──────────────────────────────────────── */
+  --line:      rgba(0, 34, 51, 0.10);
+
+  /* ── Semantic aliases ────────────────────────────────────────── */
+  --bg-app:        var(--cheviot);      /* page/content background                */
+  --bg-chrome:     var(--midnight);     /* top bar, sidebar                       */
+  --bg-card:       #ffffff;             /* card surfaces on cheviot background    */
+  --bg-accent:     var(--neptune);      /* accent panels, badge fills             */
+
+  --color-primary: var(--isotonic);    /* primary action — buttons, key numbers  */
+  --color-primary-text: var(--midnight); /* text on isotonic backgrounds          */
+}
