@@ -22,7 +22,7 @@ insert into public.partners (id, client_id, name, email) values
   ('00000000-0000-0000-0000-000000000011',
    '00000000-0000-0000-0000-000000000001',
    'Vivian',
-   'vivian@dermasul.com.br');
+   'arruda.vn@gmail.com');
 
 
 -- ── Card terminals ────────────────────────────────────────────────────────────
