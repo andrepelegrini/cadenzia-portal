@@ -19,7 +19,7 @@ interface PendingTransaction {
 }
 
 // TODO: pull from session / Supabase
-const PARTNERS = ["Ana Souza", "Marcos Lima"] as const;
+const PARTNERS = ["Livia", "Vivian"] as const;
 type Partner = (typeof PARTNERS)[number];
 
 const MOCK: PendingTransaction[] = [
