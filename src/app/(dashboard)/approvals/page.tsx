@@ -7,7 +7,7 @@ interface Transaction {
   id: string;
   sale_date: string;
   gross_amount: number;
-  product: string;
+  product: string | null;
   installments: number;
   card_last4: string | null;
   capture_method: string | null;
@@ -30,12 +30,12 @@ function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
 }
 
-function productBadge(product: string) {
+function productBadge(product: string | null) {
   const map: Record<string, { bg: string; color: string; label: string }> = {
     Credito: { bg: "var(--pacific)", color: "var(--neptune)", label: "Crédito" },
     Debito:  { bg: "var(--grape)",   color: "#3d3742",        label: "Débito"  },
   };
-  return map[product] ?? { bg: "var(--cheviot)", color: "var(--text)", label: product };
+  return map[product ?? ""] ?? { bg: "var(--cheviot)", color: "var(--text)", label: product ?? "—" };
 }
 
 export default function ApprovalsPage() {

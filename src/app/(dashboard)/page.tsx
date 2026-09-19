@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PendenciasSection from "@/components/pendencias/PendenciasSection";
 
 const products = [
   {
@@ -63,6 +64,11 @@ export default function HomePage() {
           alignItems:    "center",
         }}
       >
+        {/* Pendências */}
+        <div style={{ width: "100%", maxWidth: 980, marginBottom: 56 }}>
+          <PendenciasSection />
+        </div>
+
         {/* Eyebrow */}
         <p
           style={{
